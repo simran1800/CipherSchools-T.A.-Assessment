@@ -1,0 +1,35 @@
+//question -1---unique integers that sum upto 0
+
+#include<iostream>
+#include<vector>
+using namespace std;  
+  
+void disp(vector<int> v){
+    
+   for(int i = 0;i<v.size();i++){
+      cout << v[i] << ", ";
+   }
+   
+}
+
+vector<int> find(int n) {
+ vector <int> result(n);
+ int p = 0;
+ for(int i = 0; i < n - 1; i++){
+    result[i] = (i + 1);
+    p += (i + 1);
+ }
+ result[n - 1] = -p;
+ return result;
+}
+
+int main(){
+    int x;
+    cin>>x;
+   disp(find(x)) ;
+}
+
+//output--------------
+4
+1, 2, 3, -6, 
+
